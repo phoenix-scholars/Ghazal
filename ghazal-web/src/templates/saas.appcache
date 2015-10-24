@@ -1,0 +1,65 @@
+CACHE MANIFEST
+{cfg 'debug', false, false}
+
+
+{if $cfg_debug}
+##############################################################
+#                         Resources                          #
+#                                                            #
+##############################################################
+{else}
+/assets/img/favicon.png
+/assets/css/style.css
+/assets/font/mg.woff2
+{/if}
+
+{if $cfg_debug}
+##############################################################
+#                         Libraries                          #
+#                                                            #
+##############################################################
+# JS (Debug mode)
+{else}
+/assets/js/jquery.min.js
+# Materialize 
+/assets/css/materialize.min.css
+/assets/js/materialize.min.js 
+/assets/font/roboto/Roboto-Light.woff2
+/assets/font/roboto/Roboto-Regular.woff2
+/assets/font/material-design-icons/Material-Design-Icons.woff2
+# Angular applications
+/assets/js/angular.min.js
+/assets/js/angular-translate.min.js
+/assets/js/angular-touch.min.js 
+/assets/js/angular-ui-router.min.js
+/assets/js/angular-materialize.min.js
+# Pluf mudules
+/module/pluf.min.js
+/module/pluf.saas.min.js
+/module/pluf.admin.min.js
+/module/pluf.help.min.js
+/module/pluf.jahanjoo.min.js
+{/if}
+
+{if $cfg_debug}
+##############################################################
+#                     Main application                       #
+#                                                            #
+##############################################################
+{else}
+/main/img/background1.svg
+/main/img/background2.svg
+/main/img/background3.svg
+/main/img/parkingyab-logo.svg
+/main/app.min.js
+/main/modal.login.html
+/main/view.app.html
+/main/view.body.html
+/main/view.explorer.html
+/main/view.footer.html
+/main/view.gettingstart.html
+/main/view.header.html
+{/if}
+NETWORK:
+*
+/api/*

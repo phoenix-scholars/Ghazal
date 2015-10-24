@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="jahanjoo" manifest="/saas.appcache">
+{cfg 'debug', false, false}
+<head>
+{block HEAD}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<meta name="author" content="Phoinex Scholars Co. (http://dpq.co.ir)">
+<link rel="icon" href="/assets/img/favicon.png">
+<title>jahanjoo.ir</title>
+{/block}
+{block MoreHEAD}{/block}
+{block CSS}<!-- Global CSS -->
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+{if $cfg_debug}<!-- Debug: CSS -->
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/assets/lib/materialize/dist/css/materialize.min.css"/>
+{else}
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/assets/css/materialize.min.css"/>
+{/if}
+{/block}
+{block MoreCSS}{/block}
+</head>
+<body>
+{block HeaderView}{/block}
+{block View}
+	<div  data-ng-controller="MainController">
+		<div class="appPreloading" data-ng-hide="app.state!=0" data-ng-cloak>
+		{literal}
+		Preloading ...<br/>
+		{{app.preloading.title}}-{{app.preloading.message}}<br/>
+		{{app.preloading.progress}}%
+		{/literal}
+		</div>
+		<div data-ng-show="app.state==1">
+			<div ui-view="Header"></div>
+			<div ui-view="Body"></div>
+		</div>
+	</div>
+{/block}
+{block FooterView}{/block}
+{block Library}
+	{if $cfg_debug}
+	<script src="/assets/lib/jquery/dist/jquery.min.js"></script>
+	<script src="/assets/lib/angular/angular.min.js"></script>
+	<script src="/assets/lib/angular-translate/angular-translate.min.js"></script>
+	<script src="/assets/lib/angular-touch/angular-touch.min.js"></script>
+	<script	src="/assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="/assets/lib/materialize/dist/js/materialize.min.js"></script>
+	<script src="/assets/lib/angular-materialize/src/angular-materialize.js"></script>
+	{else}<!-- Libraries -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/angular.min.js"></script>
+	<script src="/assets/js/angular-translate.min.js"></script>
+	<script src="/assets/js/angular-touch.min.js"></script>
+	<script	src="/assets/js/angular-ui-router.min.js"></script>
+	<script src="/assets/js/materialize.min.js"></script>
+	<script src="/assets/js/angular-materialize.min.js"></script>
+	{/if}
+{/block}
+{block MoreLibrary}{/block}
+{block Application}{/block}
+</body>
+</html>

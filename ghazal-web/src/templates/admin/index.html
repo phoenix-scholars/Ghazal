@@ -1,0 +1,39 @@
+{extends "index.html"}
+
+{block layout}
+<div ui-view="Header"></div>
+<div class="row">
+	<div class="col l8 offset-l2 m12 s12 ">
+		<div ui-view="Body"></div>
+	</div>
+</div>
+{/block}
+
+{block app}
+{cfg 'debug', false, false}
+{if $cfg_debug}
+	<!-- برنامه‌ها -->
+	<script type="text/javascript" src="/main/admin/module.js"></script>
+	<script type="text/javascript" src="/main/admin/routes.js"></script>
+	<script type="text/javascript" src="/main/admin/controller.dashbord.js"></script>
+	<script type="text/javascript" src="/main/admin/controller.users.js"></script>
+	<script type="text/javascript" src="/main/admin/controller.reports.js"></script>
+	<script type="text/javascript" src="/main/config.js"></script>
+	
+	<script type="text/javascript" src="/module/pluf.js"></script>
+	<script type="text/javascript" src="/module/pluf.admin.js"></script>
+	<script type="text/javascript" src="/module/pluf.saas.js"></script>
+	<script type="text/javascript" src="/module/pluf.wiki.js"></script>
+	<script type="text/javascript" src="/module/pluf.jahanjoo.js"></script>
+	
+	<script type="text/javascript" src="/assets/lib/markdown/lib/markdown.js"></script>
+{else}
+	<script type="text/javascript" src="/main/admin/app.min.js"></script>
+	<script type="text/javascript" src="/main/config.min.js"></script>
+	<script type="text/javascript" src="/module/pluf.min.js"></script>
+	<script type="text/javascript" src="/module/pluf.saas.min.js"></script>
+	<script type="text/javascript" src="/module/pluf.wiki.min.js"></script>
+	<script type="text/javascript" src="/module/pluf.jahanjoo.min.js"></script>
+	<script type="text/javascript" src="/assets/js/markdown.min.js"></script>
+{/if}
+{/block}

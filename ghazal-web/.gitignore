@@ -1,0 +1,7 @@
+/bower_components/
+src/assets/lib
+src/index.php
+src/config.php
+/node_modules/
+/dest/
+/jayab.sql
