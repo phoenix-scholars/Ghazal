@@ -1,0 +1,30 @@
+<VirtualHost *:1380>
+ DocumentRoot /home/maso/Workspace/git/Ghazal/ghazal-web/src
+ ServerName ghazal.dpq.co.ir
+ ServerAdmin info@dpq.co.ir
+ <Directory /home/maso/Workspace/git/Ghazal/ghazal-web/src>
+  AllowOverride All
+  Order allow,deny
+  Allow from all
+  Options +FollowSymLinks
+  Require all granted
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*) /index.php/$1
+ </Directory>
+</VirtualHost>
+<VirtualHost *:1381>
+ DocumentRoot /home/maso/Workspace/git/Ghazal/ghazal-web/dest/
+ ServerName ghazal.dpq.co.ir
+ ServerAdmin info@dpq.co.ir
+ <Directory /home/maso/Workspace/git/Ghazal/ghazal-web/dest/>
+  AllowOverride All
+  Order allow,deny
+  Allow from all
+  Options +FollowSymLinks
+  Require all granted
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*) /index.php/$1
+ </Directory>
+</VirtualHost>
