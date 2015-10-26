@@ -7,6 +7,12 @@
  */
 function Ghazal_Migrations_Install_setup ($params = '')
 {
+    // دسته ریشه
+    $cat = new KM_Category();
+    $cat->title = "root category";
+    $cat->description = "auto created";
+    $cat->create();
+    
     /*
      * موجودیت‌های پیش فرض سیستم
      */
