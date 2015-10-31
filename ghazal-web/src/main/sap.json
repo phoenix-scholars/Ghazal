@@ -32,19 +32,19 @@
   		"href":"css/style.css"
   	}],
   "meta" : [{
-  		"name":"author",
-  		"content":"Phoinex Scholars Co. (http://dpq.co.ir)"
+  		"name" : "author",
+  		"content" : "Phoinex Scholars Co. (http://dpq.co.ir)"
   	}],
   "dependencies": {
     "angular": "~1.4.0",
     "angular-animate": "~1.4.5",
     "angular-aria" : "~1.4.0",
     "angular-material" : "~0.11.2",
-    "angular-material-cc" : "~0.11.2",
+    "angular-material-css" : "~0.11.2",
     "angular-touch": "~1.4.0",
-    "angular-translate": "~2.7.2"
+    "angular-translate": "~2.7.2",
     "angular-ui-router": "~0.2.15",
     "angular-xeditable": "~0.1.9",
-    "markdown": "~0.5.0",
+    "markdown": "~0.5.0"
   }
 }

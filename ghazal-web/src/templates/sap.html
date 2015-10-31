@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html manifest="/cache/{$sap->id}/saas.appcache">
 <head>
-
 {if $metas}
 	{foreach $metas as $meta}
 		<meta {foreach $meta as $key=>$val}{$key}="{$val}" {/foreach}/>
@@ -10,6 +9,12 @@
 {if $links}
 	{foreach $links as $link}
 		<link {foreach $link as $key=>$val}{$key}="{$val}" {/foreach}/>
+	{/foreach}
+{/if}
+
+{if $cssLibs}
+	{foreach $cssLibs as $cssLib}
+		<link rel="stylesheet" type="text/css" href="{$cssLib->path}"/>
 	{/foreach}
 {/if}
 </head>
