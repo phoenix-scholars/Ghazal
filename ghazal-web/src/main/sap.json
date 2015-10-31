@@ -1,0 +1,59 @@
+{
+  "name": "jayab-client",
+  "version": "0.1.0",
+  "description": "Jayab web client",
+  "license": "MIT",
+  "homepage": "http://dpq.co.ir",
+  "authors": [
+    "mostafa barmshory <mostafa.barmshory@dpq.co.ir>",
+    "Hadi mansouri <mohammad.hadi.mansouri@dpq.co.ir>"
+  ],
+  "keywords": [
+    "Jayab",
+    "Client",
+    "Web"
+  ],
+  "view" : "/view.main.html",
+  "src" : [
+  	"module.js",
+  	"route.js",
+  	"controller.header.js",
+  	"controller.footer.js"
+  ],
+  "link" : [{
+  		"type":"text/css",
+  		"rel":"stylesheet",
+  		"media":"screen,projection",
+  		"href":"css/style.css"
+  	}, {
+  		"type":"text/css",
+  		"rel":"stylesheet",
+  		"media":"screen,projection",
+  		"href":"css/style.css"
+  	}],
+  "meta" : [
+  	{
+  		"name":"author",
+  		"content":"Phoinex Scholars Co. (http://dpq.co.ir)"
+  	},
+  	{
+  		"name":"author",
+  		"content":"Phoinex Scholars Co. (http://dpq.co.ir)"
+  	},
+  	{
+  		"name":"author",
+  		"content":"Phoinex Scholars Co. (http://dpq.co.ir)"
+  	}
+  ],
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-touch": "~1.4.0",
+    "angular-xeditable": "~0.1.9",
+    "angular-materialize": "*",
+    "angular-validation-match": "~1.5.1",
+    "markdown": "~0.5.0",
+    "angular-translate": "~2.7.2",
+    "angular-animate": "~1.4.5"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html manifest="/cache/{$sap->id}/saas.appcache">
+<head>
+
+{if $metas}
+	{foreach $metas as $meta}
+		<meta {foreach $meta as $key=>$val}{$key}="{$val}" {/foreach}/>
+	{/foreach}
+{/if}
+{if $links}
+	{foreach $links as $link}
+		<link {foreach $link as $key=>$val}{$key}="{$val}" {/foreach}/>
+	{/foreach}
+{/if}
+</head>
+<body>
+{cfg 'debug', false, false}
+
+{sapView $mainView}
+
+{if $jsLibs}
+	{foreach $jsLibs as $jsLib}
+		<script type="text/javascript" src="{$jsLib->path}"></script>
+	{/foreach}
+{/if}
+
+{if $cfg_debug}
+	{foreach $sources as $src}
+		<script type="text/javascript" src="{$sap->path}/{$src}"></script>
+	{/foreach}
+{else}
+	<script type="text/javascript" src="{$sap->path}/app.min.js"></script>
+{/if}
+</body>
+</html>

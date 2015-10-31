@@ -21,21 +21,16 @@ return array(
                 'base' => $base,
                 'sub' => include 'KM/urls.php'
         ),
-        array( // Jayab
-                'regex' => '#^/api/jayab#',
+        array(
+                'regex' => '#^/api/saas#',
                 'base' => $base,
-                'sub' => include 'Jayab/urls.php'
+                'sub' => include 'SaaS/urls.php'
         ),
-		array (
-				'regex' => '#^/api/saas#',
-				'base' => $base,
-				'sub' => include 'SaaS/urls.php' 
-		),
-		array ( // SaaS : online applications
-				'regex' => '#^#',
-				'base' => $base,
-				'sub' => include 'SaaS/urls-app.php' 
-		) 
+        array( // SaaS : online applications
+                'regex' => '#^#',
+                'base' => $base,
+                'sub' => include 'SaaS/urls-app2.php'
+        )
 );
 
 

@@ -25,8 +25,15 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $user->staff = true;
     $user->create();
     
+    $sap = new SaaS_SAP();
+    $sap->path = '/main';
+    $sap->title = 'Ghazal main app';
+    $sap->descritpion = 'Ghazal';
+    $sap->create();    
+    
     $mainApp = new SaaS_Application();
     $mainApp->title = 'Admim';
+    $mainApp->sap = $sap;
     $mainApp->description = 'Auto generated application';
     $mainApp->create();
     

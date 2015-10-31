@@ -3,6 +3,10 @@
 	<name>ghazal-server</name>
 	<comment></comment>
 	<projects>
+		<project>pluf</project>
+		<project>pluf-saas</project>
+		<project>pluf-user</project>
+		<project>pluf-wiki</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
