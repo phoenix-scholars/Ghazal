@@ -17,19 +17,13 @@
   "src" : [
   	"module.js",
   	"route.js",
-  	"controller.header.js",
-  	"controller.footer.js"
+  	"controller.main.js"
   ],
   "link" : [{
   		"type":"text/css",
   		"rel":"stylesheet",
   		"media":"screen,projection",
-  		"href":"css/style.css"
-  	}, {
-  		"type":"text/css",
-  		"rel":"stylesheet",
-  		"media":"screen,projection",
-  		"href":"css/style.css"
+  		"href":"main/css/style.css"
   	}],
   "meta" : [{
   		"name" : "author",
