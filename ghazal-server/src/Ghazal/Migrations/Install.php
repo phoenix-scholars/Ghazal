@@ -1,5 +1,6 @@
 <?php
 
+Pluf::loadFunction('SaaS_Shortcuts_LoadLibFromJson');
 /**
  * ساختارهای اولیه داده‌ای و پایگاه داده را ایجاد می‌کند.
  * 
@@ -69,86 +70,7 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $themeConfig->create();
     
     Pluf_RowPermission::add($user, $mainApp, 'SaaS.software-owner');
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular';
-    $lib->version = '1.4.4';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular/angular.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-animate';
-    $lib->version = '1.4.7';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-animate/angular-animate.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-aria';
-    $lib->version = '1.4.7';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-aria/angular-aria.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-material-css';
-    $lib->version = '0.11.2';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::CSS;
-    $lib->path = '/assets/lib/angular-material/angular-material.min.css';
-    $lib->create();
-   
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-material';
-    $lib->version = '0.11.2';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = ' /assets/lib/angular-material/angular-material.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-touch';
-    $lib->version = '1.4.4';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-touch/angular-touch.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-translate';
-    $lib->version = '2.7.2';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-translate/angular-translate.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-ui-router';
-    $lib->version = '0.2.15';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-ui-router/release/angular-ui-router.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'angular-xeditable';
-    $lib->version = '0.1.9';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/angular-xeditable/dist/js/xeditable.min.js';
-    $lib->create();
-    
-    $lib = new SaaS_Lib();
-    $lib->name = 'markdown';
-    $lib->version = '0.5.0';
-    $lib->mode = SaaS_LibMode::RELESE;
-    $lib->type = SaaS_LibType::JavaScript;
-    $lib->path = '/assets/lib/markdown/lib/markdown.js';
-    $lib->create();
+    SaaS_Shortcuts_LoadLibFromJson(dirname(__FILE__)."/slib.json", true);
 }
 
 /**
