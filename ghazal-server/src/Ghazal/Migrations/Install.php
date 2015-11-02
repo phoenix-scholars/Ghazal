@@ -26,23 +26,46 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $user->staff = true;
     $user->create();
     
-    
     $sap = new SaaS_SAP();
     $sap->path = '/mprofile';
     $sap->title = 'Profile manager';
     $sap->descritpion = 'Ghazal default profile manager';
+    $sap->type = 'free';
     $sap->create();
     
     $sap = new SaaS_SAP();
     $sap->path = '/mwiki';
     $sap->title = 'Wiki viewer';
     $sap->descritpion = 'Ghazal default wiki viewer';
+    $sap->type = 'free';
     $sap->create();
     
     $sap = new SaaS_SAP();
     $sap->path = '/main';
     $sap->title = 'Ghazal main app';
     $sap->descritpion = 'Ghazal';
+    $sap->type = 'free';
+    $sap->create();
+    
+    $sap = new SaaS_SAP();
+    $sap->path = '/ghazal-register';
+    $sap->title = 'Ghazal register';
+    $sap->descritpion = 'Ghazal main user application';
+    $sap->type = 'free';
+    $sap->create();
+    
+    $sap = new SaaS_SAP();
+    $sap->path = '/ghazal-user';
+    $sap->title = 'Ghazal user';
+    $sap->descritpion = 'Ghazal main user application';
+    $sap->type = 'free';
+    $sap->create();
+    
+    $sap = new SaaS_SAP();
+    $sap->path = '/ghazal';
+    $sap->title = 'Ghazal';
+    $sap->descritpion = 'Ghazal main application';
+    $sap->type = 'free';
     $sap->create();
     
     $mainApp = new SaaS_Application();

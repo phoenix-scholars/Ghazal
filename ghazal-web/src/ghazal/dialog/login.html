@@ -1,0 +1,22 @@
+<md-dialog>
+	<form ng-submit="login({username : user_name, password : user_password})">
+		<md-dialog-content>
+			<h5>به پرتال غزل خوش آمدید.</h5>
+			<md-input-container>
+		      <label>{{ 'User name' | translate }}</label>
+		      <input ng-model="user_name" type="text">
+		    </md-input-container>
+			<md-input-container>
+		      <label>{{ 'Password' | translate }}</label>
+		      <input ng-model="user_password" type="password">
+		    </md-input-container>
+		</md-dialog-content>
+		<div class="md-actions">
+			<input type="submit" value="Login" ng-show="false" />
+			<md-button ng-click="closeDialog()">{{ 'Close' | translate }}</md-button>
+			<md-button ng-click="login({username : user_name, password : user_password})"  class="md-primary">{{ 'Login' | translate }}</md-button>
+		</div>
+	</form>
+</md-dialog>
+
+
