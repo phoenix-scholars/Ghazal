@@ -1,40 +1,64 @@
-<!DOCTYPE html>
+<!DOCTYPE html>{*
+*************************************************************************
+                           Appcache
+                           
+حمایت از زبان و کش نرم افزار. در این قسمت زبان و کش کردن نرم افزار
+بررسی شده و بخش‌های مورد نیاز به آن اضافه می‌شود.
+*************************************************************************
+*}{if $appcache}
 <html manifest="/cache/{$sap->id}/saas.appcache">
-<head>
-{if $metas}
-	{foreach $metas as $meta}
-		<meta {foreach $meta as $key=>$val}{$key}="{$val}" {/foreach}/>
-	{/foreach}
+{else}
+<html>
 {/if}
-{if $links}
-	{foreach $links as $link}
-		<link {foreach $link as $key=>$val}{$key}="{$val}" {/foreach}/>
-	{/foreach}
+<head>{*
+*************************************************************************
+                             Meta datas
+*************************************************************************
+*}{if $metas}
+{foreach $metas as $meta}{*
+	*}<meta {foreach $meta as $key=>$val}{$key}="{$val}" {/foreach}/>
+{/foreach}
+{/if}{* 
+*************************************************************************
+                               Links
+*************************************************************************
+*}{if $links}
+{foreach $links as $link}{*
+	*}<link {foreach $link as $key=>$val}{$key}="{$val}" {/foreach}/>
+{/foreach}
 {/if}
-
 {if $cssLibs}
-	{foreach $cssLibs as $cssLib}
-		<link rel="stylesheet" type="text/css" href="{$cssLib->path}"/>
-	{/foreach}
+{foreach $cssLibs as $cssLib}{*
+	*}<link rel="stylesheet" type="text/css" href="{$cssLib->path}"/>
+{/foreach}
 {/if}
 </head>
 <body>
 {cfg 'debug', false, false}
-
-{sapView $mainView}
-
-{if $jsLibs}
-	{foreach $jsLibs as $jsLib}
-		<script type="text/javascript" src="{$jsLib->path}"></script>
-	{/foreach}
+{*
+*************************************************************************
+						Application View
+*************************************************************************
+*}{sapView $mainView}
+{*
+*************************************************************************
+                         Dependencies
+*************************************************************************
+*}{if $jsLibs}
+{foreach $jsLibs as $jsLib}{*
+	*}<script type="text/javascript" src="{$jsLib->path}"></script>
+{/foreach}
 {/if}
-
-{if $cfg_debug}
-	{foreach $sources as $src}
-		<script type="text/javascript" src="{$sap->path}/{$src}"></script>
-	{/foreach}
-{else}
-	<script type="text/javascript" src="{$sap->path}/app.min.js"></script>
+{*
+*************************************************************************
+                        Application Source
+*************************************************************************
+*}{if $cfg_debug}
+{foreach $sources as $src}{*
+	*}<script type="text/javascript" src="{$sap->path}/{$src}"></script>
+{/foreach}
+{else}{*
+	*}<script type="text/javascript" src="{$sap->path}/app.min.js"></script>
 {/if}
 </body>
 </html>

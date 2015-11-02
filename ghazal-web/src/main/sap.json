@@ -14,10 +14,14 @@
     "Web"
   ],
   "view" : "/view.main.html",
+  "appcache" : "false",
   "src" : [
   	"module.js",
   	"route.js",
   	"controller.main.js"
+  ],
+  "resource" : [
+  
   ],
   "link" : [{
   		"type":"text/css",

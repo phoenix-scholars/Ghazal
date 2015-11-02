@@ -1,5 +1,6 @@
 /bower_components/
 src/assets/lib
+src/lib
 src/index.php
 src/config.php
 /node_modules/
