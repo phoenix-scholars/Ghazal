@@ -5,8 +5,14 @@ app
  * 
  */
 .controller('MainController', function ($scope, $notify, $act, $state,
-    $mdDialog, $usr, $menu) {
-	
+    $mdDialog, $usr, $menu, appcache) {
+  
+  appcache.checkUpdate().then(function() {
+    alert('There\'s an update available!');
+    return appcache.swapCache();
+  }).then(function(){
+    alert('Application cache updated.');
+  });
 	/**
 	 * کاربر را از سیستم خارج می‌کند. با خارج شدن کاربر از سیستم مسیر نرم‌افزار به
 	 * صفحه اصلی انتقال پیدا می‌کند.

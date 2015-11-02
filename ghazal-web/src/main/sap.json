@@ -60,6 +60,7 @@
     "markdown": "~0.5.0",
     "angular-pluf":"~0.1.0",
     "angular-pluf-saas":"~0.1.0",
-    "angular-pluf-help":"~0.1.0"
+    "angular-pluf-help":"~0.1.0",
+    "ng-appcache": "~2.0.1"
   }
 }
