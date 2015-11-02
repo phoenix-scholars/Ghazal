@@ -26,11 +26,24 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $user->staff = true;
     $user->create();
     
+    
+    $sap = new SaaS_SAP();
+    $sap->path = '/mprofile';
+    $sap->title = 'Profile manager';
+    $sap->descritpion = 'Ghazal default profile manager';
+    $sap->create();
+    
+    $sap = new SaaS_SAP();
+    $sap->path = '/mwiki';
+    $sap->title = 'Wiki viewer';
+    $sap->descritpion = 'Ghazal default wiki viewer';
+    $sap->create();
+    
     $sap = new SaaS_SAP();
     $sap->path = '/main';
     $sap->title = 'Ghazal main app';
     $sap->descritpion = 'Ghazal';
-    $sap->create();    
+    $sap->create();
     
     $mainApp = new SaaS_Application();
     $mainApp->title = 'Admim';
