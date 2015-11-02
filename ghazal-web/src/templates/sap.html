@@ -5,16 +5,14 @@
 حمایت از زبان و کش نرم افزار. در این قسمت زبان و کش کردن نرم افزار
 بررسی شده و بخش‌های مورد نیاز به آن اضافه می‌شود.
 *************************************************************************
-*}{if $appcache}
-<html manifest="/cache/{$sap->id}/saas.appcache">
-{else}
-<html>
-{/if}
-<head>{*
+*}<html {*
+*}{if array_key_exists('appcache', $package) && filter_var($package['appcache'], FILTER_VALIDATE_BOOLEAN)}manifest="{url 'SaaS_Views_SAP::appcache', array($sap->id)}"{/if} {*
+*}{if $language}language="{$language}"{/if} {*
+*}>{*
 *************************************************************************
                              Meta datas
 *************************************************************************
-*}{if $metas}
+*}{if array_key_exists('meta', $package)}{assign $metas=$package['meta']}
 {foreach $metas as $meta}{*
 	*}<meta {foreach $meta as $key=>$val}{$key}="{$val}" {/foreach}/>
 {/foreach}
@@ -22,7 +20,7 @@
 *************************************************************************
                                Links
 *************************************************************************
-*}{if $links}
+*}{if array_key_exists('link', $package)}{assign $links=$package['link']}
 {foreach $links as $link}{*
 	*}<link {foreach $link as $key=>$val}{$key}="{$val}" {/foreach}/>
 {/foreach}
@@ -53,11 +51,12 @@
 *************************************************************************
                         Application Source
 *************************************************************************
-*}{if $cfg_debug}
-{foreach $sources as $src}{*
+*}{if $cfg_debug && array_key_exists('src', $package)}{assign $srcs=$package['src']}
+{foreach $srcs as $src}{*
 	*}<script type="text/javascript" src="{$sap->path}/{$src}"></script>
 {/foreach}
-{else}{*
+{/if}
+{if !$cfg_debug}{*
 	*}<script type="text/javascript" src="{$sap->path}/app.min.js"></script>
 {/if}
 </body>

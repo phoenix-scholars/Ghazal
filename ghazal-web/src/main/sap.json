@@ -13,25 +13,38 @@
     "Client",
     "Web"
   ],
-  "view" : "/view.main.html",
+  "view" : "/main.html",
   "appcache" : "false",
   "src" : [
   	"module.js",
   	"route.js",
-  	"controller.main.js"
+  	"controller/main.js",
+  	"controller/application.js",
+  	"controller/footer.js",
+  	"controller/header.js",
+  	"controller/welcome.js"
   ],
   "resource" : [
-  
+  	"main.html",
+  	"view/footer.html",
+  	"view/header.html",
+  	"view/welcome.html"
   ],
   "link" : [{
   		"type":"text/css",
   		"rel":"stylesheet",
   		"media":"screen,projection",
-  		"href":"main/css/style.css"
+  		"href":"/main/css/style.css"
   	}],
   "meta" : [{
   		"name" : "author",
   		"content" : "Phoinex Scholars Co. (http://dpq.co.ir)"
+  	},{
+  		"http-equiv" : "Content-Type",
+  		"content" : "text/html; charset=UTF-8"
+  	},{
+  		"name" : "viewport",
+  		"content" : "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
   	}],
   "dependencies": {
     "angular": "~1.4.0",
@@ -43,6 +56,9 @@
     "angular-translate": "~2.7.2",
     "angular-ui-router": "~0.2.15",
     "angular-xeditable": "~0.1.9",
-    "markdown": "~0.5.0"
+    "markdown": "~0.5.0",
+    "angular-pluf":"~0.1.0",
+    "angular-pluf-saas":"~0.1.0",
+    "angular-pluf-help":"~0.1.0"
   }
 }
