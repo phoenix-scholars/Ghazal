@@ -1,0 +1,43 @@
+CACHE MANIFEST
+# 1394-07-015 v1.0.0
+{cfg 'debug', false, false}
+{* 
+*************************************************************************
+                               Links
+*************************************************************************
+*}{if $cssLibs}{foreach $cssLibs as $cssLib}{*
+	*}{$cssLib->path}
+{/foreach}
+{/if}{*
+*************************************************************************
+                         Dependencies
+*************************************************************************
+*}{if $jsLibs}
+{foreach $jsLibs as $jsLib}{*
+	*}{$jsLib->path}
+{/foreach}
+{/if}{*
+*************************************************************************
+                        Application Source
+*************************************************************************
+*}{if $cfg_debug && array_key_exists('src', $package)}{assign $srcs=$package['src']}
+{foreach $srcs as $src}{*
+	*}{$sap->path}/{$src}
+{/foreach}
+{/if}
+{if !$cfg_debug}{*
+	*}{$sap->path}/app.min.js
+{/if}
+{if array_key_exists('resource', $package)}{assign $resources=$package['resource']}
+{foreach $resources as $resource}{*
+	*}{$sap->path}/{$resource}
+{/foreach}
+{/if}
+{if !$cfg_debug}{*
+	*}{$sap->path}/app.min.js">
+{/if}
+
+NETWORK:
+*
+FALLBACK:
+#

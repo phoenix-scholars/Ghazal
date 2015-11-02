@@ -14,7 +14,7 @@
     "Web"
   ],
   "view" : "/main.html",
-  "appcache" : "false",
+  "appcache" : "yes",
   "src" : [
   	"module.js",
   	"route.js",
@@ -26,6 +26,7 @@
   ],
   "resource" : [
   	"main.html",
+  	"css/style.css",
   	"view/footer.html",
   	"view/header.html",
   	"view/welcome.html"
