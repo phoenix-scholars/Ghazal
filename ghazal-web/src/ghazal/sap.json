@@ -1,9 +1,17 @@
-{
+{  
+  "manifest_version": 2,
   "name": "ghazal",
   "version": "0.1.0",
   "description": "Ghazal main application",
   "license": "MIT",
   "homepage": "http://dpq.co.ir",
+  "icons": {
+    "svg": "img/logo.svg",
+    "16": "img/logo-16.png",
+    "32": "img/logo-32.png",
+    "64": "img/logo-64.png",
+    "128": "img/logo-128.png"
+  },
   "authors": [
     "mostafa barmshory <mostafa.barmshory@dpq.co.ir>"
   ],
