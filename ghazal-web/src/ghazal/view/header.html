@@ -3,24 +3,25 @@
 	md-shrink-speed-factor="0.9">
 	
 	<div class="md-toolbar-tools">
-		<span>Avanoc Audit Log</span>
+		<a href="/">
+			<span>{{'ghazal' | translate }}</span>
+		</a>
 		<span flex></span>
-		
 		
 	    <md-button 
 	    	ng-repeat="menu in navbar | orderBy:['priority']" 
 	    	ng-show="menu.visible()" 
     		ng-click="menu.active()"
-	    	class="md-icon-button" 
-	    	aria-label="Favorite" 
-	    	class="hide-on-small-only">
+	    	class="md-icon-button hide-on-small-only" 
+	    	aria-label="Favorite">
 			<md-icon ng-show="menu.icon">{{menu.icon}}</md-icon>
 			<span ng-hide="menu.icon">{{menu.label | translate}}</span>
 	    </md-button>
 		
-		
-		<md-button ng-click="toggleSidenav('main')">
-			<md-tooltip>Show side navigator</md-tooltip>
+		<md-button 
+			ng-click="toggleSidenav('main')"
+	    	class="md-icon-button" 
+	    	aria-label="Favorite" >
 			<md-icon>menu</md-icon>
 		</md-button>
 	</div>
