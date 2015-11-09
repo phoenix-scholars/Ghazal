@@ -13,6 +13,7 @@ app.controller('HeaderController', function($scope, $mdSidenav, $menu) {
 	$menu.menu('main').then(function(menu) {
 		$scope.navbar = menu;
 	});
+	
 	$menu.menu('sidebar').then(function(menu) {
 		$scope.sidebar = menu;
 	});

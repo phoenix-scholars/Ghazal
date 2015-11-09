@@ -1,10 +1,10 @@
 <?php
-
 Pluf::loadFunction('SaaS_Shortcuts_LoadLibFromJson');
+
 /**
  * ساختارهای اولیه داده‌ای و پایگاه داده را ایجاد می‌کند.
- * 
- * @param string $params
+ *
+ * @param string $params            
  */
 function Ghazal_Migrations_Install_setup ($params = '')
 {
@@ -26,51 +26,51 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $user->staff = true;
     $user->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/mprofile';
-    $sap->title = 'Profile manager';
-    $sap->descritpion = 'Ghazal default profile manager';
-    $sap->type = 'free';
-    $sap->create();
+    $mprofile = new SaaS_SAP();
+    $mprofile->path = '/mprofile';
+    $mprofile->title = 'Profile manager';
+    $mprofile->descritpion = 'Ghazal default profile manager';
+    $mprofile->type = 'free';
+    $mprofile->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/mwiki';
-    $sap->title = 'Wiki viewer';
-    $sap->descritpion = 'Ghazal default wiki viewer';
-    $sap->type = 'free';
-    $sap->create();
+    $mwiki = new SaaS_SAP();
+    $mwiki->path = '/mwiki';
+    $mwiki->title = 'Wiki viewer';
+    $mwiki->descritpion = 'Ghazal default wiki viewer';
+    $mwiki->type = 'free';
+    $mwiki->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/main';
-    $sap->title = 'Ghazal main app';
-    $sap->descritpion = 'Ghazal';
-    $sap->type = 'free';
-    $sap->create();
+    $main = new SaaS_SAP();
+    $main->path = '/main';
+    $main->title = 'Ghazal main app';
+    $main->descritpion = 'Ghazal';
+    $main->type = 'free';
+    $main->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/ghazal-register';
-    $sap->title = 'Ghazal register';
-    $sap->descritpion = 'Ghazal main user application';
-    $sap->type = 'free';
-    $sap->create();
+    $ghazalr = new SaaS_SAP();
+    $ghazalr->path = '/ghazal-register';
+    $ghazalr->title = 'Ghazal register';
+    $ghazalr->descritpion = 'Ghazal main user application';
+    $ghazalr->type = 'free';
+    $ghazalr->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/ghazal-user';
-    $sap->title = 'Ghazal user';
-    $sap->descritpion = 'Ghazal main user application';
-    $sap->type = 'free';
-    $sap->create();
+    $ghazalu = new SaaS_SAP();
+    $ghazalu->path = '/ghazal-user';
+    $ghazalu->title = 'Ghazal user';
+    $ghazalu->descritpion = 'Ghazal main user application';
+    $ghazalu->type = 'free';
+    $ghazalu->create();
     
-    $sap = new SaaS_SAP();
-    $sap->path = '/ghazal';
-    $sap->title = 'Ghazal';
-    $sap->descritpion = 'Ghazal main application';
-    $sap->type = 'free';
-    $sap->create();
+    $ghazal = new SaaS_SAP();
+    $ghazal->path = '/ghazal';
+    $ghazal->title = 'Ghazal';
+    $ghazal->descritpion = 'Ghazal main application';
+    $ghazal->type = 'free';
+    $ghazal->create();
     
     $mainApp = new SaaS_Application();
     $mainApp->title = 'Admim';
-    $mainApp->sap = $sap;
+    $mainApp->sap = $ghazal;
     $mainApp->description = 'Auto generated application';
     $mainApp->create();
     
@@ -106,7 +106,13 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $themeConfig->create();
     
     Pluf_RowPermission::add($user, $mainApp, 'SaaS.software-owner');
-    SaaS_Shortcuts_LoadLibFromJson(dirname(__FILE__)."/slib.json", true);
+    Pluf_RowPermission::add($mainApp, $mprofile, 'SaaS.sap-authorized-access');
+    Pluf_RowPermission::add($mainApp, $mwiki, 'SaaS.sap-anonymous-access');
+    Pluf_RowPermission::add($mainApp, $main, 'SaaS.sap-anonymous-access');
+    Pluf_RowPermission::add($mainApp, $ghazalr, 'SaaS.sap-anonymous-access');
+    Pluf_RowPermission::add($mainApp, $ghazalu, 'SaaS.sap-anonymous-access');
+    Pluf_RowPermission::add($mainApp, $ghazal, 'SaaS.sap-anonymous-access');
+    SaaS_Shortcuts_LoadLibFromJson(dirname(__FILE__) . "/slib.json", true);
 }
 
 /**

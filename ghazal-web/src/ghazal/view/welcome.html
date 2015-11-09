@@ -1,7 +1,18 @@
 <div layout="column" layout-align="space-around center">
 	<h1>پرتال شاعران ایران : غزل</h1>
 	<h5 class="header col s12">راهی نوین برای انتشار اثار ادبی شاعران جوان.</h5>
-	<br /> <a href="#"
+	<br /> 
+	<a href="#"
 		id="download-button"
 		class="btn-large waves-effect waves-light teal lighten-1"> شروع کنید</a>
 </div>
+
+
+
+		
+<md-button 
+	ng-repeat="app in apps.items" 
+	class="md-icon-button" 
+	aria-label="Favorite">
+	<span>{{app.title | translate}}</span>
+</md-button>
