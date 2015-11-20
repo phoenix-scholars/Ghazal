@@ -4,8 +4,7 @@
  ServerAdmin info@dpq.co.ir
  <Directory /home/maso/Workspace/git/Ghazal/ghazal-web/src>
   AllowOverride All
-  Order allow,deny
-  Allow from all
+  Require all granted
   Options +FollowSymLinks
   Require all granted
   RewriteEngine On
@@ -19,8 +18,7 @@
  ServerAdmin info@dpq.co.ir
  <Directory /home/maso/Workspace/git/Ghazal/ghazal-web/dest/>
   AllowOverride All
-  Order allow,deny
-  Allow from all
+  Require all granted
   Options +FollowSymLinks
   Require all granted
   RewriteEngine On
