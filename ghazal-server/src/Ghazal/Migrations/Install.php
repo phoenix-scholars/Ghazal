@@ -27,7 +27,7 @@ function Ghazal_Migrations_Install_setup ($params = '')
     $user->staff = true;
     $user->create();
 
-    SaaS_Shortcuts_LoadLibFromJson(dirname(__FILE__) . "/slib.json", true);
+    SaaS_Shortcuts_LoadLibFromJson(dirname(__FILE__) . "/lib.json", true);
     SaaS_Shortcuts_LoadSPAFromRepository();
     
     $mainApp = new SaaS_Application();

@@ -6,7 +6,7 @@
 بررسی شده و بخش‌های مورد نیاز به آن اضافه می‌شود.
 *************************************************************************
 *}<html {*
-*}{if array_key_exists('appcache', $package) && filter_var($package['appcache'], FILTER_VALIDATE_BOOLEAN)}manifest="{url 'SaaS_Views_SAP::appcache', array($app->id)}"{/if} {*
+*}{if array_key_exists('appcache', $package) && filter_var($package['appcache'], FILTER_VALIDATE_BOOLEAN)}manifest="{url 'SaaS_Views_SPA::appcache', array($app->id)}"{/if} {*
 *}{if $language}language="{$language}"{/if} {*
 *}>{*
 *************************************************************************
@@ -37,7 +37,7 @@
 *************************************************************************
 						Application View
 *************************************************************************
-*}{sapView $mainView}
+*}{spaView $mainView}
 {*
 *************************************************************************
                          Dependencies
