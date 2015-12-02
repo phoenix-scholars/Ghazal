@@ -36,6 +36,11 @@
   		"rel":"stylesheet",
   		"media":"screen,projection",
   		"href":"/main/css/style.css"
+  	},{
+  		"type":"text/css",
+  		"rel":"stylesheet",
+  		"media":"screen,projection",
+  		"href":"/assets/css/material-design-icons.css"
   	}],
   "meta" : [{
   		"name" : "author",
